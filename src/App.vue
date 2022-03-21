@@ -1,5 +1,6 @@
 <template>
   <div id="app" style="background-color: #51e857;">
+    <input id="button" type="button" value="Restart Confetti" @click="restartConfetti">
     <BouncingPictures style="position: absolute;"/>
     <div id="card-container">
       <div class="card">
@@ -8,7 +9,6 @@
           <BirthdayText/>
         </div>
       </div>
-      <input id="button" type="button" value="Restart Confetti" @click="restartConfetti">
     </div>
   </div>
 </template>
@@ -63,14 +63,14 @@ export default {
 }
 
 #button {
-    line-height: 12px;
-    font-size: 8pt;
-    font-family: tahoma;
-    margin-top: 1px;
-    margin-right: 2px;
-    position:absolute;
-    top:0;
-    right:0;
+  line-height: 12px;
+  font-size: 8pt;
+  font-family: tahoma;
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  top:0;
+  right:0;
 }
 
 .card {

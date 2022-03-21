@@ -1,5 +1,8 @@
 <template>
   <div>
+    <input id="button" v-if="!isPaused" type="button" value="Stop Pictures" @click="pauseClick" style="width: 75px">
+    <input id="button" v-if="isPaused" type="button" value="Start Pictures" @click="unpauseClick" style="width: 75px">
+
     <div :style="dvdLogoStyle_1">
       <img :src="picture_1" :style="dvdLogoImageStyle" />
     </div>
@@ -103,12 +106,15 @@ export default {
       picture_2: picture_array[rand(picture_array.length)],
       posX_2: window.innerWidth - DVD_LOGO_WIDTH,
       posY_2: rand(window.innerHeight - DVD_LOGO_HEIGHT) + 10,
+      isPaused: false
     }
   },
   mounted () {
     setInterval(() => {
-      this.movePic1()
-      this.movePic2()
+      if(!this.isPaused) {
+        this.movePic1()
+        this.movePic2()
+      }
     }, 10)
   },
   methods: {
@@ -213,11 +219,28 @@ export default {
         this.dvdLogoStyle_2.backgroundColor = randColor()
       }
       this.dvdLogoStyle_2.transform = `translate(${this.posX_2}px, ${this.posY_2}px)`
-    }
+    },
+    pauseClick() {
+      this.isPaused = true
+    },
+    unpauseClick() {
+      this.isPaused = false
+    },
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#button {
+  line-height: 12px;
+  font-size: 8pt;
+  font-family: tahoma;
+  margin-top: 1px;
+  margin-left: 2px;
+  position:absolute;
+  top:0;
+  left:0;
+  display: block;
+}
 </style>
