@@ -3,18 +3,18 @@
     <h1>Happy 22<span class="ordinal">nd</span> Birthday Karen</h1>
     <h2>I hope you have an amazing birthday<br>as well as a wonderful year!! 😸😸</h2>
     <h3 style="width: 60%; margin-left: auto; margin-right: auto;">
-      You bring people joy and entertainment with your amazing personality<br>
-      and overall atmosphere you bring to everything you do. I am excited to see<br>
-      where this year takes you and how you are going to make it better for everyone around you!<br>
+      You bring people joy and entertainment with your amazing personality
+      and overall atmosphere you bring to everything you do. I am excited to see
+      where this year takes you and how you are going to make it better for everyone around you!
     </h3>
     <h3 style="width: 60%; margin-left: auto; margin-right: auto;">
       I look forward to witnessing everything you are going to do and building upon this friendship!
       Hopefully we can get to know each other more this year and do more things together; both online and in person.
       I wish you all the best and I hope you have a wonderful day and rest of your year!
     </h3>
-    <img :src="dab" style="margin-top: 10px"/>
-    <img :src="heart" style="margin-top: 10px"/>
-    <img :src="dab" style="margin-top: 10px"/>
+    <img :src="dab" style="margin-top: 10px" class='emote' />
+    <img :src="heart" style="margin-top: 10px" class='emote' />
+    <img :src="dab" style="margin-top: 10px" class='emote' />
   </div>
 </template>
 
@@ -59,6 +59,14 @@ a {
   font-size: medium;
 }
 
+h2 {
+  font-size: calc(8px + 6 * ((300vw - 320px) / 1000));
+}
+
+h3 {
+  font-size: calc(8px + 6 * ((275vw - 320px) / 1920));
+}
+
 h1 {
   background-image: linear-gradient(-45deg, #cc2b5e, #fdfdfd, #FF0099, #fa431a) !important;
   background-size: 400% !important;
@@ -87,4 +95,8 @@ h1 {
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}}
+
+.emote {
+  width: 10%;
+}
 </style>
