@@ -10,17 +10,22 @@
 </template>
 
 <script>
+let prefix = ''
+
+if (process.env.NODE_ENV === 'production') {
+  prefix = 'birthday-card/'
+}
 const picture_array = [
-  '../picture1.gif',
-  '../picture2.png',
-  '../picture3.png',
-  '../picture4.png',
-  '../picture5.png',
-  '../picture6.gif',
-  '../picture7.gif',
-  '../picture8.gif',
-  '../picture9.gif',
-  '../picture10.gif',
+  `../${prefix}picture1.gif`,
+  `../${prefix}picture2.png`,
+  `../${prefix}picture3.png`,
+  `../${prefix}picture4.png`,
+  `../${prefix}picture5.png`,
+  `../${prefix}picture6.gif`,
+  `../${prefix}picture7.gif`,
+  `../${prefix}picture8.gif`,
+  `../${prefix}picture9.gif`,
+  `../${prefix}picture10.gif`,
 ]
 const rand = (max) => {
   return Math.floor(Math.random() * max)
