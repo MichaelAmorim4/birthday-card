@@ -12,15 +12,28 @@
       Hopefully we can get to know each other more this year and do more things together; both online and in person.
       I wish you all the best and I hope you have a wonderful day and rest of your year!
     </h3>
-    <img :src="'../bunni_dab.png'" style="margin-top: 10px"/>
-    <img :src="'../bunni_heart.png'" style="margin-top: 10px"/>
-    <img :src="'../bunni_dab.png'" style="margin-top: 10px"/>
+    <img :src="dab" style="margin-top: 10px"/>
+    <img :src="heart" style="margin-top: 10px"/>
+    <img :src="dab" style="margin-top: 10px"/>
   </div>
 </template>
 
 <script>
+
+let prefix = ''
+
+if (process.env.NODE_ENV === 'production') {
+  prefix = 'birthday-card/'
+}
+
 export default {
   name: 'BirthdayText',
+  data() {
+    return {
+      dab: `../${prefix}bunni_dab.png`,
+      heart: `../${prefix}bunni_heart.png`,
+    }
+  }
 }
 </script>
 
